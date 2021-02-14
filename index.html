@@ -17,7 +17,11 @@
 
 <body>
   <div class="container">
-    <h4 class="mt-2 text-center">Search Image for create slider</h4>
+    <h1 class="mt-2 text-center text-primary">Search Image for create slider</h1>
+    <div class="text-center">
+      <h2 class="text-success"><span >Total image:</span>
+        <span id="selected-issue">0</span></h2>
+    </div>
     <div class="form-inline mt-3 d-flex justify-content-center">
       <div class="input-group col-md-6 mb-2">
         <input type="text" class="form-control" id="search" placeholder="nature">
@@ -31,7 +35,9 @@
           <input class="form-control" id="duration" placeholder="slider change duration">
         </div>
         <button id="create-slider" class="btn btn-primary px-5">Create slider</button>
+        
       </div>
+      
       <!-- spinner -->
       <div class="d-flex justify-content-center ">
         <div id="spinner" class="spinner-border text-primary d-none" role="status">
@@ -48,13 +54,13 @@
       <section class="mt-5" id="sliders">
 
       </section>
-      <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light">
+      <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center">
         <span class="dot" onclick="changeItem(-1)"></span>
         <span class="dot" onclick="changeItem(1)"></span>
       </div>
     </div>
   </div>
-  <h1 id="error-text" class="text-center text-danger"></h1>
+  <!-- <h1 id="error-text" class="text-center text-danger"></h1> -->
   <!-- Optional JavaScript -->
   <script src="app.js"></script>
 </body>
