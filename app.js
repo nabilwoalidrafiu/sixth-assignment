@@ -4,6 +4,7 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
+const total = document.getElementById("total");
 // selected image 
 let sliders = [];
 
@@ -50,14 +51,16 @@ const selectItem = (event, img) => {
   element.classList.add('added');
 
   let item = sliders.indexOf(img);
-  // let count = 0
   if (item === -1) {
     sliders.push(img);
   } else  {
     sliders.pop(img);
     element.classList.remove('added');
   }
+  
 }
+
+
 var timer
 const createSlider = () => {
   // check slider image length
@@ -122,6 +125,7 @@ const changeSlide = (index) => {
 }
 
 searchBtn.addEventListener('click', function () {
+  total.style.display = "block";
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
   const search = document.getElementById('search');
@@ -131,6 +135,7 @@ searchBtn.addEventListener('click', function () {
 })
 
 sliderBtn.addEventListener('click', function () {
+  total.style.display = "none";
   const Duration = document.getElementById('duration').value
   if (Duration > 0 || Duration == "") {
     createSlider()
